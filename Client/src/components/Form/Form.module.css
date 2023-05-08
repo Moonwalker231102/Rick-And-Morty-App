@@ -1,0 +1,74 @@
+:root{
+    --blue1: #02afc5;
+    --blue1rgba: rgba(2, 175, 197, 0.3);
+    --blue2: #35c9dd;
+    --blue3: #87d1db;
+    --blue4: #a9f3fd;
+    --blue5: #4cb5c3;
+    --green: #97ce4c;
+    --yellow:#f0e14a;
+    --pink:  #e89ac7;
+    --clearPink: #e4a788;
+    --brown: #44281d;
+  }
+
+.background{
+    transition: background-color 0.5s ease-out;
+}
+.gridContainer {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    
+  }
+  
+  .container {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 4rem;
+  background-color: var(--blue1rgba);
+  height: 205px;
+  border-radius: 50%;
+  box-shadow: 1px 1px 17px 10px var(--blue2);
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+
+  
+  .input {
+    width: 100%;
+    height: 40px;
+    margin: 0 auto;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    background-color:var(--blue1rgba);
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .LoginButton {
+  width: 100%;
+  height: 40px; /* reducir la altura del botón */
+  margin: 10px auto 0; /* centrar el botón dentro del contenedor y reducir el margen superior */
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(2, 175, 197, 0.9);
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: Get Schwifty;
+  color: var(--green);
+  font-size: larger;
+}
+
+  
+  .LoginButton:hover {
+    transform: scale(0.5);
+  }

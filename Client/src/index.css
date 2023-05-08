@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Get Schwifty';
+  src: url('./assets/Fonts/get_schwifty.ttf') format('truetype');
+}
+
+
+body {
+  margin: 0;
+  font-family: Get Schwifty;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

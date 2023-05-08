@@ -1,0 +1,28 @@
+:root{
+    --blue1: #02afc5;
+    }
+
+
+.Input{
+    border-radius:2rem;
+    background-color: transparent;
+    border-color: var(--blue1);
+    width: 50%;
+    padding: .3rem;
+    margin-right: .4rem;
+}
+
+.Button{
+    border-radius:2rem;
+    background-color: transparent;
+    border-color: var(--blue1);
+    margin-right: .5rem;
+    width: 30%;
+    font-family: Get Schwifty;
+    font-size: medium;
+
+}
+.Button:hover{
+    cursor: pointer;
+    
+}
