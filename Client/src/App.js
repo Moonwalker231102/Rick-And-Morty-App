@@ -15,8 +15,8 @@ function App() {
    const [characters, setCharacters] = useState([]);
    const [access, setAccess] = useState(false);
    const navigate = useNavigate();
-   const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
-   const API_KEY = "64938ddbb093.4a7eb42afa301a18d706";
+   // const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
+   // const API_KEY = "64938ddbb093.4a7eb42afa301a18d706";
    const Email = "ejimenezcadena@gmail.com";
    const password = "Rosana2311";
    const onSearch = (id) => { 
@@ -24,7 +24,7 @@ function App() {
          alert("Character already exists")
          return;
       }
-      axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
          .then(response => response.data)
          .then((data) => {
             setCharacters((oldChars) => [...oldChars, data]);
@@ -39,7 +39,7 @@ function App() {
 
    const randomSearch = () => { 
       const randomIndex = Math.floor(Math.random() * 826);
-      axios(`${URL_BASE}/${randomIndex}?key=${API_KEY}`)
+      axios(`http://localhost:3001/rickandmorty/character/${randomIndex}`)
          .then(response => response.data)
          .then((data) => { 
             setCharacters((oldChars)=>[...oldChars, data])
