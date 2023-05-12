@@ -6,12 +6,12 @@ const Form = ({ login }) => {
   const navigate = useNavigate();
 
   const [userData, setUserData] = useState({
-    Email: "",
+    email: "",
     password: "",
   });
 
   const [errors, setErrors] = useState({
-    Email: "",
+    email: "",
     password: "",
   });
 
@@ -48,11 +48,11 @@ const Form = ({ login }) => {
         <input
           className={style.input}
           type="text"
-          name="Email"
+          name="email"
           value={userData.Email}
           onChange={handleInputChange}
         />
-        {errors.Email && <p>{errors.Email}</p>}
+        {errors.email && <p>{errors.email}</p>}
         <label htmlFor="password">Password</label>
         <input
           className={style.input}

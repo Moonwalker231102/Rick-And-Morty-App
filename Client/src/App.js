@@ -17,8 +17,8 @@ function App() {
    const navigate = useNavigate();
    // const URL_BASE = "https://be-a-rym.up.railway.app/api/character";
    // const API_KEY = "64938ddbb093.4a7eb42afa301a18d706";
-   const Email = "ejimenezcadena@gmail.com";
-   const password = "Rosana2311";
+   // const Email = "ejimenezcadena@gmail.com";
+   // const password = "Rosana2311";
    const onSearch = (id) => { 
       if (characters.find((char) => char.id === id)) { 
          alert("Character already exists")
@@ -37,29 +37,37 @@ function App() {
          })
    };
 
+   const login = (userData)=>{
+      const {email, password} = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login';
+      axios(URL + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
+         const { access } = data;
+         setAccess(access);
+         access && navigate('/home');
+      });
+   }
+
+   useEffect(() => {
+      if (!access) {
+         navigate("/");
+      }
+   }, [access, navigate]);
+
    const randomSearch = () => { 
       const randomIndex = Math.floor(Math.random() * 826);
-      axios(`http://localhost:3001/rickandmorty/character/${randomIndex}`)
+         axios(`http://localhost:3001/rickandmorty/character/${randomIndex}`)
          .then(response => response.data)
          .then((data) => { 
             setCharacters((oldChars)=>[...oldChars, data])
          })
    }
 
-  const login = (userData) => {
-    if (userData.Email === Email && userData.password === password) {
-      setAccess(true);
-      navigate("/home")
-   }
-  }
-  useEffect(() => {
-   if (!access) {
-     navigate("/");
-   }
- }, [access, navigate]);
- const onClose = (id) => { 
-    const charactersFiltered = characters.filter(character => character.id !== id)
-    setCharacters(charactersFiltered);
+
+
+   const onClose = (id) => { 
+      const charactersFiltered = characters.filter(character => character.id !== id)
+      setCharacters(charactersFiltered);
    }
    
    
@@ -81,3 +89,4 @@ function App() {
 
 
 export default App;
+
