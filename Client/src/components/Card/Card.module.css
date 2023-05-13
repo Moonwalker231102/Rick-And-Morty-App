@@ -1,8 +1,20 @@
+.root{
+  --blue1: #02afc5;
+  --blue2: #35c9dd;
+  --blue3: #87d1db;
+  --blue4: #a9f3fd;
+  --blue4: #4cb5c3;
+  --green: #97ce4c;
+  --yellow:#f0e14a;
+  --pink:  #e89ac7;
+  --clearPink: #e4a788;
+  --brown: #44281d;
+}
 .container {
   background-color: rgba(2, 175, 197, 0.3);;
   background-size: cover;
   background-position: center;
-  box-shadow: inset 0 0 10px 0 #e600e6;
+  box-shadow: inset 0 0 10px 0 var(--yellow);
   width: fit-content;
   padding: 0.5rem;
   border-radius: 1.5rem;
@@ -11,7 +23,7 @@
 }
 
 .container:hover {
-  box-shadow: 1px 1px 17px 10px #de01de;
+  box-shadow: 1px 1px 17px 10px var(--green);
   transform: scale(0.8);
 }
 
@@ -24,7 +36,7 @@
 .favButton {
   font-size: 1.5rem;
   background-color: transparent;
-  color: #d151f7;
+  color: var(--blue1);
   border: none;
   outline: none;
   cursor: pointer;

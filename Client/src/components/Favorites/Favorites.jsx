@@ -9,6 +9,7 @@ const Favorites = () => {
   const { myFavorites } = useSelector((state) => state);
   const [aux, setAux] = useState(false);
   const dispatch = useDispatch();
+  
   const handleRemoveFromFavorites = (id) => {
     dispatch(removeFav(id));
   };
@@ -46,7 +47,6 @@ const handleFilter = (event) => {
           image={character.image}
           isFav={true}
           onClose={handleRemoveFromFavorites}
-          hideKillButton={true}
         />
       ))}
     </div>

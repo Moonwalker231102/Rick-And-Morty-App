@@ -5,7 +5,6 @@ const postFav = (req, res)=>{
 
     myFavorites.push(character);
 
-
     return(
         res.status(200).json(myFavorites)
     )
