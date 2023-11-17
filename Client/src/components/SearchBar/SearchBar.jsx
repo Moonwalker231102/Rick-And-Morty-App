@@ -19,6 +19,7 @@ const SearchBar = ({ onSearch }) => {
                className={style.Input}
                type='search'
                onChange={handleChange}
+               placeholder="Type an id"
                onKeyDown={handleKeyDown}
             />
             <button className={style.Button} onClick={() => onSearch(id)} onKeyDown={() => onSearch(id)}>Add</button>

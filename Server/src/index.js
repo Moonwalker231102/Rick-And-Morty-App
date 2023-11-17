@@ -27,8 +27,8 @@ server.use((req, res, next) => {
 
 server.use('/rickandmorty', router);
 
-sequelize.sync({force: true}).then(() =>{
-    saveApiData();
+sequelize.sync({force: true}).then(async () =>{
+    await saveApiData()
     server.listen(PORT, () => {
         console.log(`Server raised in port: ${PORT}`);
     });
