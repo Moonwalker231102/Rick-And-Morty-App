@@ -1,6 +1,7 @@
 const axios = require('axios');
 const { sequelize } = require('../DB_connection');
 const Character = require('../models/Character')(sequelize);
+
 const getApiData = async () => {
     try {
 
@@ -37,9 +38,12 @@ const getApiData = async () => {
 const saveApiData = async ()=>{
     try {
         const allCharacters = await getApiData();
-        const createCharacters = await Character.bulkCreate(allCharacters)
-        //bulkCreate nos permite pasar un array de objetos y los crea todos juntos en la db.
-        console.log(createCharacters)
+        // console.log(allCharacters)
+        const createCharacters = allCharacters.map(char => {
+            console.log(char)
+            Character.create(char)
+        })
+        return createCharacters;
     } catch (error) {
         return {error: error.message}
     }
